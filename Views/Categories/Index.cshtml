@@ -1,0 +1,27 @@
+﻿@model IEnumerable<CafeLab.Models.Category>
+
+@{
+    ViewData["Title"] = "Категорії";
+}
+
+<h1>Категорії</h1>
+
+@foreach (var item in Model)
+{
+    <div class="_container">
+        <div class="_card">
+            <div class="_imgBx">
+                <img src="https://lh3.googleusercontent.com/proxy/IJY9uNEOd9-poolJghPOuCA2BCrW2bczba_PCb0-9WHfyPqPc5-LXlkbvromT8iTlS7zxuk2FDNpTyt8DUJxFHaRXVm0Fa282muwsAfjEpqu" />
+            </div>
+            <div class="_content">
+                <h2>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </h2>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </p>
+            </div>
+        </div>
+    </div>
+
+}
