@@ -64,6 +64,12 @@ namespace CafeLab.Controllers
             return View(cafe);
         }
 
+        public JsonResult DoesCafeAlreadyExists(string address)
+        {
+            var cafe = _context.Cafes.ToList().FirstOrDefault(cafe => cafe.Address.Equals(address));
+            return Json(cafe is null);
+        }
+
         // GET: Cafes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {

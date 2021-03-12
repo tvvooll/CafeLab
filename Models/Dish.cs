@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -13,10 +14,23 @@ namespace CafeLab.Models
         }
 
         public int DishId { get; set; }
+
+        [Required(ErrorMessage = "Це поле обов'язкове!")]
+        [Display(Name = "Назва")]
         public string Name { get; set; }
+
+        [Required(ErrorMessage = "Це поле обов'язкове!")]
+        [Display(Name = "Категорія")]
         public int CategoryId { get; set; }
+
+        [Required(ErrorMessage = "Це поле обов'язкове!")]
+        [Display(Name = "Ціна")]
         public int Price { get; set; }
+
+        [Display(Name = "Вага")]
         public int? Weight { get; set; }
+
+        [Display(Name = "Опис")]
         public string Description { get; set; }
 
         public virtual Category Category { get; set; }

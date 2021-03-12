@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -14,7 +15,8 @@ namespace CafeLab.Models
         }
 
         public int CafeId { get; set; }
-        
+
+        [Remote("DoesCafeAlreadyExists", "Cafes", HttpMethod = "POST", ErrorMessage = "Кафе з такою адресою вже існує, спробуйте іншу!")]
         [Required(ErrorMessage = "Це поле обов'язкове!")]
         [Display(Name = "Адреса")]
         public string Address { get; set; }
