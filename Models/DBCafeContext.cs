@@ -29,7 +29,7 @@ namespace CafeLab.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server= SURFACELAPTOP3; Database=DBCafe; Trusted_Connection=True; ");
+                optionsBuilder.UseSqlServer("Server=SURFACELAPTOP3; Database=DBCafe; Trusted_Connection=True;");
             }
         }
 
@@ -56,6 +56,8 @@ namespace CafeLab.Models
             modelBuilder.Entity<Dish>(entity =>
             {
                 entity.Property(e => e.Description).HasColumnType("text");
+
+                entity.Property(e => e.ImageUrl).HasColumnName("ImageURL");
 
                 entity.Property(e => e.Name)
                     .IsRequired()

@@ -15,15 +15,15 @@ namespace CafeLab.Models
 
         public int DishId { get; set; }
 
-        [Required(ErrorMessage = "Це поле обов'язкове!")]
+        [Required(ErrorMessage = "Це поле є обов'язковим!")]
         [Display(Name = "Назва")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Це поле обов'язкове!")]
+        [Required(ErrorMessage = "Це поле є обов'язковим!")]
         [Display(Name = "Категорія")]
         public int CategoryId { get; set; }
 
-        [Required(ErrorMessage = "Це поле обов'язкове!")]
+        [Required(ErrorMessage = "Це поле є обов'язковим!")]
         [Display(Name = "Ціна")]
         public int Price { get; set; }
 
@@ -32,6 +32,9 @@ namespace CafeLab.Models
 
         [Display(Name = "Опис")]
         public string Description { get; set; }
+
+        [Display(Name = "Фото")]
+        public string ImageUrl { get; set; }
 
         public virtual Category Category { get; set; }
         public virtual ICollection<DishesInOrder> DishesInOrders { get; set; }

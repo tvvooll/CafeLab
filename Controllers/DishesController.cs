@@ -62,7 +62,7 @@ namespace CafeLab.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DishId,Name,CategoryId,Price,Weight,Description")] Dish dish)
+        public async Task<IActionResult> Create([Bind("DishId,Name,CategoryId,Price,Weight,Description,ImageUrl")] Dish dish)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace CafeLab.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DishId,Name,CategoryId,Price,Weight,Description")] Dish dish)
+        public async Task<IActionResult> Edit(int id, [Bind("DishId,Name,CategoryId,Price,Weight,Description,ImageUrl")] Dish dish)
         {
             if (id != dish.DishId)
             {

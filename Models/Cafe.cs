@@ -16,17 +16,15 @@ namespace CafeLab.Models
 
         public int CafeId { get; set; }
 
-        [Remote("DoesCafeAlreadyExists", "Cafes", HttpMethod = "POST", ErrorMessage = "Кафе з такою адресою вже існує, спробуйте іншу!")]
-        [Required(ErrorMessage = "Це поле обов'язкове!")]
-        [Display(Name = "Адреса")]
+        [Required(ErrorMessage="Це поле є обов'язковим!")]
+        [Display(Name="Адреса")]
+        [Remote("DoesCafeAlreadyExists", "Cafes", ErrorMessage = "Кафе з такою адресою вже існує, спробуйте іншу!")]
         public string Address { get; set; }
 
-        [Required(ErrorMessage = "Це поле обов'язкове!")]
-        [Display(Name = "Час відкриття")]
+        [Required(ErrorMessage = "Це поле є обов'язковим!")]
         public TimeSpan OpenHour { get; set; }
 
-        [Required(ErrorMessage = "Це поле обов'язкове!")]
-        [Display(Name = "Час закриття")]
+        [Required(ErrorMessage = "Це поле є обов'язковим!")]
         public TimeSpan CloseHour { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }
